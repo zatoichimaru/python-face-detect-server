@@ -102,6 +102,7 @@ def read_from_camera(age_net, gender_net, destination):
 				overlay_text = "%s %s" % (gender, age)
 				cv2.putText(image, overlay_text, (x, y), font, 1, (255, 255, 255), 2, cv2.LINE_AA)
 
+
 				jsonFileLoad = openJsonArray( os.path.join( root, 'file.json' ) )
 				
 				for jsonValue in jsonFileLoad:
