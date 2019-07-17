@@ -152,16 +152,17 @@ if __name__ == "__main__":
 	age_list = ['(0, 2)', '(4, 6)', '(8, 12)', '(15, 20)', '(25, 32)', '(38, 43)', '(48, 53)', '(60, 100)']
 	gender_list = ['Homem', 'Mulher']
 
-	unziperFile( source, destination )
+
+	unziperFile( source, os.path.join( pathRoot, 'upload' ) )
 	age_net, gender_net = initialize_caffe_models()
 	read_from_camera(age_net, gender_net, destination  )
 
 	if not os.path.exists( os.path.join( pathRoot, 'files' ) ):
 		shutil.rmtree( destination )
 	
-	#if not os.path.exists( os.path.join( pathRoot, 'files.zip' ) ):
-	#	renameZip = 'files_' + time.strftime( "%Y%m%d" ) + '_' + time.strftime( "%H%M%S" )
-	#	os.rename( source, source.replace( "files", renameZip) )
+	if not os.path.exists( os.path.join( pathRoot, 'files.zip' ) ):
+		renameZip = 'files_' + time.strftime( "%Y%m%d" ) + '_' + time.strftime( "%H%M%S" )
+		os.rename( source, source.replace( "files", renameZip) )
 
 
 
