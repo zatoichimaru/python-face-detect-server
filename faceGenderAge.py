@@ -159,9 +159,9 @@ if __name__ == "__main__":
 	if not os.path.exists( os.path.join( pathRoot, 'files' ) ):
 		shutil.rmtree( destination )
 	
-	if not os.path.exists( os.path.join( pathRoot, 'files.zip' ) ):
-		renameZip = 'files_' + time.strftime( "%Y%m%d" ) + '_' + time.strftime( "%H%M%S" )
-		os.rename( source, source.replace( "files", renameZip) )
+	#if not os.path.exists( os.path.join( pathRoot, 'files.zip' ) ):
+	#	renameZip = 'files_' + time.strftime( "%Y%m%d" ) + '_' + time.strftime( "%H%M%S" )
+	#	os.rename( source, source.replace( "files", renameZip) )
 
 
 
