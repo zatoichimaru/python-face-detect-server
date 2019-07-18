@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import pymysql
 
 def insertFace(face_position_x, face_position_y, face_position_width, face_position_height, face_position_gender, face_position_age, face_position_porcentage):
