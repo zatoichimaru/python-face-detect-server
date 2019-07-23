@@ -18,7 +18,7 @@ from random import randint
 pathRoot = os.getcwd()
 pathOpencv = os.path.dirname(cv2.__file__)
 source = os.path.join( pathRoot, 'upload' )
-destination = os.path.join( source, 'files' )
+destination = os.path.join( source, 'filesTemp' )
 source = os.path.join( source, 'files.zip' )
 
 face_cascade = cv2.CascadeClassifier('data/haarcascade_frontalface_alt.xml')
@@ -157,11 +157,11 @@ if __name__ == "__main__":
 
 	unziperFile( source, os.path.join( pathRoot, 'upload' ) )
 	age_net, gender_net = initialize_caffe_models()
-	read_from_camera(age_net, gender_net, destination  )
+	read_from_camera(age_net, gender_net, destination )
 
 	if not os.path.exists( os.path.join( pathRoot, 'files' ) ):
 		shutil.rmtree( destination )
-	
+
 	if not os.path.exists( os.path.join( pathRoot, 'files.zip' ) ):
 		renameZip = 'files_' + time.strftime( "%Y%m%d" ) + '_' + time.strftime( "%H%M%S" )
 		os.rename( source, source.replace( "files", renameZip) )
